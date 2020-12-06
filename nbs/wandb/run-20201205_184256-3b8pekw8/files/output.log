@@ -1,0 +1,25 @@
+NOTE: Enter 'c' at the ipdb>  prompt to continue execution.
+> [0;32m<string>[0m(2)[0;36m<module>[0;34m()[0m
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31merror[0m                                     Traceback (most recent call last)
+[0;32m<ipython-input-8-8cd5fc1eb66c>[0m in [0;36mtrain[0;34m(self, max_episodes)[0m
+[1;32m     29[0m             [0mstate[0m [0;34m=[0m [0mcv2[0m[0;34m.[0m[0mcvtColor[0m[0;34m([0m[0mstate[0m[0;34m,[0m [0mcv2[0m[0;34m.[0m[0mCOLOR_BGR2GRAY[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     30[0m             [0;32mwhile[0m [0;32mnot[0m [0mdone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 31[0;31m                 [0maction[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mmodel[0m[0;34m.[0m[0mget_action[0m[0;34m([0m[0mstate[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     32[0m                 [0mnext_state[0m[0;34m,[0m [0mreward[0m[0;34m,[0m [0mdone[0m[0;34m,[0m [0m_[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0menv[0m[0;34m.[0m[0mstep[0m[0;34m([0m[0maction[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     33[0m                 [0mself[0m[0;34m.[0m[0mbuffer[0m[0;34m.[0m[0mput[0m[0;34m([0m[0mstate[0m[0;34m,[0m [0maction[0m[0;34m,[0m [0mreward[0m[0;34m*[0m[0;36m0.01[0m[0;34m,[0m [0mnext_state[0m[0;34m,[0m [0mdone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-7-a52bad1eeb53>[0m in [0;36mget_action[0;34m(self, state)[0m
+[1;32m     21[0m [0;34m[0m[0m
+[1;32m     22[0m     [0;32mdef[0m [0mget_action[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mstate[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 23[0;31m         [0mstate[0m [0;34m=[0m [0mcv2[0m[0;34m.[0m[0mcvtColor[0m[0;34m([0m[0mstate[0m[0;34m,[0m [0mcv2[0m[0;34m.[0m[0mCOLOR_BGR2GRAY[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     24[0m         [0;31m#state = np.reshape(state, [1, self.state_dim])[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     25[0m         [0mself[0m[0;34m.[0m[0mepsilon[0m [0;34m*=[0m [0mepsilon_decay[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31merror[0m: OpenCV(4.4.0) /tmp/pip-req-build-qacpj5ci/opencv/modules/imgproc/src/color.simd_helpers.hpp:92: error: (-2:Unspecified error) in function 'cv::impl::{anonymous}::CvtHelper<VScn, VDcn, VDepth, sizePolicy>::CvtHelper(cv::InputArray, cv::OutputArray, int) [with VScn = cv::impl::{anonymous}::Set<3, 4>; VDcn = cv::impl::{anonymous}::Set<1>; VDepth = cv::impl::{anonymous}::Set<0, 2, 5>; cv::impl::{anonymous}::SizePolicy sizePolicy = cv::impl::<unnamed>::NONE; cv::InputArray = const cv::_InputArray&; cv::OutputArray = const cv::_OutputArray&]'
+> Invalid number of channels in input image:
+>     'VScn::contains(scn)'
+> where
+>     'scn' is 1
+

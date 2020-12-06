@@ -1,0 +1,20 @@
+{
+    "os": "Linux-5.4.0-1030-gcp-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.6.9",
+    "heartbeatAt": "2020-12-05T18:36:03.103881",
+    "startedAt": "2020-12-05T18:36:02.206108",
+    "docker": null,
+    "gpu": "Tesla P100-PCIE-16GB",
+    "gpu_count": 1,
+    "cpu_count": 1,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/anton/.local/share/jupyter/runtime/kernel-ff063840-e76a-4803-b697-fac8e3df13d5.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "host": "reinflearn",
+    "username": "anton",
+    "executable": "/home/anton/envs/supermario_rl/bin/python"
+}
